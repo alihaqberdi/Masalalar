@@ -122,6 +122,57 @@ a , b = map(int, input().split())
 print(int(binpow((a),(b+1),mod)))
 
 
+"masala-15"
+n, k = map(int,input().split())
+m = 1000000007
+if n == 0:
+    print(0)
+else:
+    print((pow(k,n,m)-1) * pow(k-1,m-2,m)%m)
+
+
+"masala-16"
+def say(n) -> str:
+    for i in range(4):
+        if(n >= a[i]):
+            return say(n // a[i]) + b[i] + say(n % a[i])
+    return c[n//10] + d[n%10]
+
+a = (1000000000, 1000000, 1000, 100)
+b = ("milliard ", "million ", "ming ", "yuz ")
+c = ("", "o'n ", "yigirma ", "o'ttiz ", "qirq ", "ellik ", "oltmish ", "yetmish ", "sakson ", "to'qson ")
+d = ("", "bir ", "ikki ", "uch ", "to'rt ", "besh ", "olti ", "yetti ", "sakkiz ", "to'qqiz ")
+
+
+g = int(input())
+print(say(g))
+
+
+"masala-17"
+def raqamlar_sum(n):
+    s = 0
+    while n > 0:
+        s += n % 10
+        n = n // 10
+    return s
+def garoyib(n):
+    s = raqamlar_sum(n)
+    if n % (s * s) == 0:
+        return True
+    else:
+        return False
+def javob(n):
+    r = 0
+    x = 0
+    while n > r:
+        x += 1
+        if garoyib(x):
+            r += 1
+    return x
+j = int(input())
+print(javob(j))
+
+
 "masala -19"
 n,k=map(int,input().split())
 print(k//n)
