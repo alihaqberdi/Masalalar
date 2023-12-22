@@ -85,4 +85,18 @@ class Solution:
         return res
 
 
+# 2274
+class Solution:
+    def maxConsecutive(self, bottom: int, top: int, special: List[int]) -> int:     
+        special.sort()
+        if special[-1]<top:
+            special.append(top+1)
+        max_ = 0
+        old = bottom
+        for i in special:
+            if i - old > max_:
+                max_ = i - old
+            old = i+1
+        return max_
+
         
