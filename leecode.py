@@ -33,4 +33,41 @@ class Solution:
             if num > ans:
                 ans = num
         return ans
+
+
+# 2
+class Solution:
+    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        ans, num, vl1, vl2 = [], 0, 1, 1
+        while True:
+            val1, val2 = 0, 0
+            if vl1:
+                val1 = l1.val
+            if vl2:
+                val2 = l2.val
+            data, mod = divmod(val1 + val2 + num, 10)
+            ans.append(mod)
+            num = data
+            if not l1.next:
+                vl1 = 0
+            else:
+                l1 = l1.next
+            if not l2.next:
+                vl2 = 0
+            else:
+                l2 = l2.next
+            if not (vl2 or vl1):
+                if num:
+                    ans.append(num)
+                break
+
+        class ListNode:
+            def __init__(self, val=0, next=None):
+                self.val = val
+                self.next = next
+        data = ListNode(ans.pop(-1))
+        for i in ans[::-1]:
+            data = ListNode(i, data)
+        return data
+
         
