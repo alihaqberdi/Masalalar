@@ -60,7 +60,6 @@ class Solution:
                 if num:
                     ans.append(num)
                 break
-
         class ListNode:
             def __init__(self, val=0, next=None):
                 self.val = val
@@ -69,5 +68,21 @@ class Solution:
         for i in ans[::-1]:
             data = ListNode(i, data)
         return data
+
+
+# 1446
+class Solution:
+    def maxPower(self, s: str) -> int:
+        res, num, current = 1, 1, s[0]
+        for i in s[1:]:
+            if i == current:
+                num += 1
+            else:
+                num = 1
+            if res < num:
+                res = num
+            current = i   
+        return res
+
 
         
