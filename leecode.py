@@ -99,4 +99,32 @@ class Solution:
             old = i+1
         return max_
 
+
+# 6
+class Solution:
+    def convert(self, s: str, numRows: int) -> str:
+        data = {}
+        counter = 1
+        minus = 0
+        def change_data(key, val):
+            if data.get(key):
+                data[key] = data[key] + val
+                return
+            data[key] = val
+        for i in s:
+            if counter == 1:
+                minus = 0
+                change_data(1, i)
+            elif counter == numRows:
+                minus = 1
+                change_data(numRows, i)
+            else:
+                change_data(counter, i)
+            if minus:
+                counter -= 1
+            else:
+                counter += 1
+        return "".join(data.values())
+
+
         
