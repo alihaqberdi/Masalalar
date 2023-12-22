@@ -127,4 +127,30 @@ class Solution:
         return "".join(data.values())
 
 
+# 28
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        one = len(haystack)
+        two = len(needle)
+        if one < two:
+            return -1
+        start = 0
+        index_data = haystack[start:two]
+        for i in range(one - two + 1):
+            if index_data == needle:
+                return start
+            else:
+                if one > two:
+                    if one > two + 1:
+                        two += 1
+                        start += 1
+                        index_data = haystack[start:two]
+                    else:
+                        two+=1
+                        start += 1
+                        index_data = haystack[start:]
+                else:
+                    return -1
+
+
         
