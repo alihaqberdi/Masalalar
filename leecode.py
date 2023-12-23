@@ -201,4 +201,27 @@ class Solution:
                 if nums[i] + nums[j] == target:
                     return [i,j]
 
+
+# 1496
+class Solution:
+    def isPathCrossing(self, path: str) -> bool:
+        data = {
+            (0, 0): 1
+        }
+        curr = (0, 0)
+        for j, i in enumerate(path, start=1):
+            if i == "N":
+                run = (curr[0] + 1, curr[-1])
+            elif i == "S":
+                run = (curr[0] - 1, curr[-1])
+            elif i == 'W':
+                run = (curr[0], curr[-1] - 1)
+            else:
+                run = (curr[0], curr[-1] + 1)
+            if data.get(run):
+                return True
+            data[run] = 1
+            curr = run
+        return False
+
         
