@@ -229,4 +229,18 @@ class Solution:
 class Solution:
     def arrayStringsAreEqual(self, word1: List[str], word2: List[str]) -> bool:
         return "".join(word1) == "".join(word2)
+
+
+# 1758
+class Solution:
+    def minOperations(self, s: str) -> int:
+        def min_count(s, start):
+            ans = 0
+            cur = start
+            for i in s:
+                if i == cur:
+                    ans += 1
+                cur = "0" if cur == "1" else "1"
+            return ans
+        return min((min_count(s, "0"), min_count(s, "1")))
         
