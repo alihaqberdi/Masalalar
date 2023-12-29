@@ -243,4 +243,14 @@ class Solution:
                 cur = "0" if cur == "1" else "1"
             return ans
         return min((min_count(s, "0"), min_count(s, "1")))
+
+
+# 151
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        res = ""
+        for i in s.split()[::-1]:
+            if i != " ":
+                res += (i+" ")
+        return res[:-1]
         
