@@ -309,3 +309,13 @@ class Solution:
 class Solution:
     def maximumWealth(self, accounts: List[List[int]]) -> int:
         return max([sum(i) for i in accounts])
+
+
+# 2798
+class Solution:
+    def numberOfEmployeesWhoMetTarget(self, hours: List[int], target: int) -> int:
+        res = 0
+        for i in hours:
+            if i >= target:
+                res += 1
+        return res
