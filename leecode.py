@@ -253,4 +253,21 @@ class Solution:
             if i != " ":
                 res += (i+" ")
         return res[:-1]
-        
+
+
+# 1768
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        w1 = len(word1)
+        w2 = len(word2)
+        len_w1 = w1
+        len_w2 = w2
+        res = []
+        while len_w2 or len_w1:
+            if len_w1:
+                res.append(word1[w1 - len_w1])
+                len_w1 -= 1
+            if len_w2:
+                res.append(word2[w2 - len_w2])
+                len_w2 -= 1
+        return "".join(res)    
