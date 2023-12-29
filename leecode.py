@@ -277,3 +277,9 @@ class Solution:
 class Solution:
     def getConcatenation(self, nums: List[int]) -> List[int]:
         return nums * 2    
+
+
+# 2469
+class Solution:
+    def convertTemperature(self, celsius: float) -> List[float]:
+        return [celsius + 273.15, celsius * 1.80 + 32.00]
