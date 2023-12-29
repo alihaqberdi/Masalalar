@@ -283,3 +283,13 @@ class Solution:
 class Solution:
     def convertTemperature(self, celsius: float) -> List[float]:
         return [celsius + 273.15, celsius * 1.80 + 32.00]
+
+
+# 771
+class Solution:
+    def numJewelsInStones(self, jewels: str, stones: str) -> int:
+        res = 0
+        for i in jewels:
+            if i in stones:
+                res += stones.count(i)
+        return res
