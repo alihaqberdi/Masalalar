@@ -271,3 +271,9 @@ class Solution:
                 res.append(word2[w2 - len_w2])
                 len_w2 -= 1
         return "".join(res)    
+
+
+# 1929
+class Solution:
+    def getConcatenation(self, nums: List[int]) -> List[int]:
+        return nums * 2    
