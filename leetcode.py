@@ -344,3 +344,19 @@ class Solution:
 class Solution:
     def sum(self, num1: int, num2: int) -> int:
         return num1 + num2
+
+
+# 1678
+class Solution:
+    def interpret(self, command: str) -> str:
+        res = []
+        inde = 0
+        for i in command:
+            if i == "G":
+                res.append("G")
+            elif i == "(" and command[inde+1] == ")":
+                res.append("o")
+            elif i == "(" and command[inde+1] == "a":
+                res.append('al')
+            inde += 1
+        return "".join(res)
