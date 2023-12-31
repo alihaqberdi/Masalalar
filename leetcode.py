@@ -332,3 +332,9 @@ class Solution:
                 continue
             num2 += i
         return num1 -num2 
+
+
+# 2413
+class Solution:
+    def smallestEvenMultiple(self, n: int) -> int:
+        return n if n % 2 == 0 else n*2
