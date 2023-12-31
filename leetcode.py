@@ -371,3 +371,17 @@ class Solution:
             sum_ += i
             res.append(sum_)
         return res
+
+
+# 1365
+class Solution:
+    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
+        res = []
+        for i in nums:
+            cout = 0
+            for j in nums:
+                if i > j:
+                    cout += 1
+            res.append(cout)
+            cout = 0
+        return res
