@@ -338,3 +338,9 @@ class Solution:
 class Solution:
     def smallestEvenMultiple(self, n: int) -> int:
         return n if n % 2 == 0 else n*2
+
+
+# 2235
+class Solution:
+    def sum(self, num1: int, num2: int) -> int:
+        return num1 + num2
